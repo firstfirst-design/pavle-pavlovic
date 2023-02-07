@@ -9,10 +9,6 @@ const typography = new Typography({
 
       styles: ['400'],
     },
-    {
-      name: 'DM Sans',
-      styles: ['400'],
-    },
   ],
   headerFontFamily: ['DM Sans', 'sans-serif'],
   bodyFontFamily: ['DM Sans', 'serif'],

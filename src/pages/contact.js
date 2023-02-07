@@ -3,19 +3,47 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
+import { INLINES } from '@contentful/rich-text-types';
 
 const Contact = ({ data }) => {
   const { title } = useSiteMetadata();
+
+  const options = {
+    renderText: (text) =>
+      text.split('\n').flatMap((text, i) => [i > 0 && <br />, text]),
+    renderNode: {
+      [INLINES.HYPERLINK]: (node, children) => {
+        let anchorAttrs = {};
+
+        if (!node.data.uri.includes('my-domain-name.com')) {
+          anchorAttrs = {
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          };
+        }
+
+        return (
+          <a href={node.data.uri} {...anchorAttrs}>
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
   return (
     <Layout>
       <div className="flex mt-28">
         <div className="flex-1">
           <div>{title}</div>
-          <div>{renderRichText(data.contentfulContact.contact)}</div>
-          <div>{renderRichText(data.contentfulContact.siteInfo)}</div>
+          <br />
+          <div>{renderRichText(data.contentfulContact.contact, options)}</div>
+          <br />
+          <br />
+          <div>{renderRichText(data.contentfulContact.siteInfo, options)}</div>
         </div>
         <div className="flex-1">
-          {renderRichText(data.contentfulContact.disclaimer)}
+          {renderRichText(data.contentfulContact.disclaimer, options)}
         </div>
       </div>
     </Layout>

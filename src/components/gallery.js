@@ -41,9 +41,11 @@ export default function Gallery() {
           return (
             <div className="mb-14" key={i}>
               <div className="text-center">{node.title}</div>
-
+              <br />
               <GatsbyImage image={singleImage} alt={node.painting.title} />
-
+              <div>
+                <br />
+              </div>
               <div className="flex justify-between">
                 <div>{node.material}</div>
                 <div>{node.size}</div>
