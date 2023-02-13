@@ -53,17 +53,20 @@ export default function News() {
       {data.allContentfulNews.edges.map(({ node }, i) => {
         const singleImage = getImage(node.newsImage);
         return (
-          <div key={i} className="flex mt-28">
-            <div className="flex flex-1 flex-col justify-between">
+          <div
+            key={i}
+            className="flex flex-col-reverse md:flex-row mt-14 md:mt-28"
+          >
+            <div className="flex flex-1 flex-col justify-between mt-7">
               <div className="mr-14">
-                <div className="text-center">{node.newsTitle}</div>
+                <div className="md:text-center">{node.newsTitle}</div>
                 <br />
                 <br />
                 <div>{renderRichText(node.newsText, options)}</div>
               </div>
               <br />
               <br />
-              <div className="text-center mr-14">
+              <div className="md:text-center mr-14">
                 <Link to="/archive">Archive</Link>
               </div>
             </div>
