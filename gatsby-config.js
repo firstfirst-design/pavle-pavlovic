@@ -37,6 +37,7 @@ module.exports = {
     'gatsby-plugin-google-gtag',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-netlify',
 
     {
       resolve: 'gatsby-source-filesystem',
