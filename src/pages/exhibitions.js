@@ -9,10 +9,10 @@ const Exhibitions = ({ data }) => {
         {data.allContentfulExhibition.edges.map(({ node }, i) => {
           return (
             <div key={i} className="flex justify-between">
-              <div>{node.year}</div>
-              <div>{node.name}</div>
-              <div>{node.what}</div>
-              <div>{node.place}</div>
+              <div className="mr-3.5">{node.year}</div>
+              <div className="ml-3.5 mr-3.5">{node.name}</div>
+              <div className="ml-3.5 mr-3.5">{node.what}</div>
+              <div className="ml-3.5 text-right">{node.place}</div>
             </div>
           );
         })}

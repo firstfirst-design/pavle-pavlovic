@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
-export default function Navigation() {
+export default function NavigationLarge() {
   function useScrollDirection() {
     const [scrollDirection, setScrollDirection] = useState(null);
 
@@ -32,7 +32,7 @@ export default function Navigation() {
 
   return (
     <div
-      className={`sticky z-10 flex h-14 w-full bg-white transition-all duration-500 
+      className={`sticky z-10 flex h-14 w-full bg-white transition-all duration-500
       ${scrollDirection === 'down' ? '-top-14' : 'top-0'} `}
     >
       <div className="flex flex-1 items-center">

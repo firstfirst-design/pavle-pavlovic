@@ -5,6 +5,16 @@ require('dotenv').config({
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+const breakpoints = {
+  xs: '(max-width: 640px)',
+  sm: '(max-width: 768px)',
+  md: '(min-width: 768px)',
+  l: '(max-width: 1536px)',
+
+  portrait: '(orientation: portrait)',
+};
+
 module.exports = {
   siteMetadata: {
     title: 'Pavle Pavlović',
@@ -26,6 +36,7 @@ module.exports = {
     'gatsby-plugin-google-gtag',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-postcss',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -48,6 +59,12 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-breakpoints',
+      options: {
+        queries: breakpoints,
       },
     },
   ],

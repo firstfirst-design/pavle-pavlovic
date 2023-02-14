@@ -7,31 +7,31 @@ const CvAwards = ({ data }) => {
   const image = getImage(data.contentfulCvImage.cvImage.gatsbyImageData);
   return (
     <Layout>
-      <div className="flex mt-28">
-        <div className="w-1/3">
+      <div className="flex flex-col-reverse mt-28 lg:flex-row">
+        <div className="mt-14 lg:w-1/3 lg:mt-0">
           <GatsbyImage
             image={image}
             alt={data.contentfulCvImage.cvImage.title}
           />
         </div>
 
-        <div className="ml-14 w-2/3">
+        <div className="lg:ml-7 xl:ml-14 lg:w-2/3">
           {data.allContentfulAwardsResidencies.edges.map(({ node }, i) => {
             return (
               <div key={i} className="flex justify-between">
-                <div>{node.year}</div>
-                <div>{node.name}</div>
-                <div>{node.what}</div>
-                <div>{node.place}</div>
+                <div className="mr-3.5">{node.year}</div>
+                <div className="ml-3.5 mr-3.5">{node.name}</div>
+                <div className="ml-3.5 mr-3.5">{node.what}</div>
+                <div className="ml-3.5 text-right">{node.place}</div>
               </div>
             );
           })}
           {data.allContentfulCv.edges.map(({ node }, i) => {
             return (
               <div key={i} className="flex justify-between">
-                <div>{node.year}</div>
-                <div>{node.what}</div>
-                <div>{node.place}</div>
+                <div className="mr-3.5">{node.year}</div>
+                <div className="ml-3.5 mr-3.5">{node.what}</div>
+                <div className="ml-3.5 text-right">{node.place}</div>
               </div>
             );
           })}

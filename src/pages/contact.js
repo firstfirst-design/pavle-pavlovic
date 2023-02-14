@@ -33,8 +33,8 @@ const Contact = ({ data }) => {
 
   return (
     <Layout>
-      <div className="flex mt-28">
-        <div className="flex-1">
+      <div className="flex flex-col lg:flex-row mt-28">
+        <div className="flex-1 text-center lg:text-left">
           <div>{title}</div>
           <br />
           <div>{renderRichText(data.contentfulContact.contact, options)}</div>
@@ -42,7 +42,7 @@ const Contact = ({ data }) => {
           <br />
           <div>{renderRichText(data.contentfulContact.siteInfo, options)}</div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 mt-28 lg:mt-0 text-justify">
           {renderRichText(data.contentfulContact.disclaimer, options)}
         </div>
       </div>

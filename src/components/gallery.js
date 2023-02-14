@@ -5,9 +5,8 @@ import Masonry from 'react-masonry-css';
 
 const breakpointColumnsObj = {
   default: 3,
-  1100: 3,
-  700: 2,
-  500: 1,
+  768: 1,
+  1280: 2,
 };
 
 export default function Gallery() {
@@ -33,8 +32,8 @@ export default function Gallery() {
     <div className="-mb-14">
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className="mt-28 flex -ml-14 w-auto"
-        columnClassName="pl-14 bg-clip-padding"
+        className="mt-28 flex md:-ml-7 xl:-ml-14 w-auto"
+        columnClassName=" md:pl-7 xl:pl-14 bg-clip-padding"
       >
         {data.allContentfulPaintings.edges.map(({ node }, i) => {
           const singleImage = getImage(node.painting);
