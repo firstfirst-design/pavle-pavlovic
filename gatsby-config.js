@@ -19,7 +19,8 @@ module.exports = {
   siteMetadata: {
     title: 'Pavle Pavlović',
     siteUrl: 'https://www.pavlepavlovic.com/',
-    description: 'Portfolio Page of Croatian artist Pavle Pavlović',
+    description: 'Portfolio page of Croatian artist Pavle Pavlović',
+    image: `src/images/icon.png`,
   },
   plugins: [
     {
