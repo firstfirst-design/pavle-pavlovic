@@ -33,8 +33,6 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-google-gtag',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-postcss',
     'gatsby-plugin-netlify',
